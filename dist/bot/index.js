@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.bot = void 0;
+const grammy_1 = require("grammy");
+const config_1 = require("./config");
+const commands_1 = require("./commands");
+const callbacks_1 = require("./callbacks");
+const logger_1 = require("./middleware/logger");
+const rateLimit_1 = require("./middleware/rateLimit");
+const errorHandler_1 = require("./middleware/errorHandler");
+exports.bot = new grammy_1.Bot(config_1.config.botToken);
+exports.bot.use(logger_1.logger);
+exports.bot.use(rateLimit_1.rateLimit);
+(0, commands_1.setupCommands)(exports.bot);
+(0, callbacks_1.setupCallbacks)(exports.bot);
+exports.bot.catch(errorHandler_1.errorHandler);

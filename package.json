@@ -1,0 +1,24 @@
+{
+  "name": "telegram-file-link-bot",
+  "version": "1.0.0",
+  "description": "Telegram File Link Bot on Vercel",
+  "main": "dist/api/webhook.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "grammy": "^1.21.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "@vercel/node": "^3.0.23",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
+}
